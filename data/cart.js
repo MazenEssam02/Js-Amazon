@@ -47,3 +47,12 @@ export function calculateCart(){
     });
     return cartQuantity;
   }
+  export function updateCartItemQuantity(productId,quantity){
+   
+    cart.forEach((item)=>{
+      if(item.productId===productId){
+       item.quantity=quantity;
+      }
+    });
+    
+  }
