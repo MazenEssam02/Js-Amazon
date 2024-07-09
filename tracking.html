@@ -19,37 +19,35 @@
     <link rel="stylesheet" href="styles/pages/tracking.css">
   </head>
   <body>
-    <div class="amazon-header">
-      <div class="amazon-header-left-section">
-        <a href="amazon.html" class="header-link">
-          <img class="amazon-logo"
-            src="images/amazon-logo-white.png">
-          <img class="amazon-mobile-logo"
-            src="images/amazon-mobile-logo-white.png">
-        </a>
-      </div>
+    <header class="header">
+      <a href="amazon.html" class="header-left">
+        <img src="./images/amazon-logo-white.png" alt="Amazon-logo" class="amazon-logo">
+        <img src="./images/amazon-mobile-logo-white.png" alt="Amazon-logo" class="amazon-mobile-logo">
+      </a>
+     
 
-      <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" placeholder="Search">
-
-        <button class="search-button">
-          <img class="search-icon" src="images/icons/search-icon.png">
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search">
+        <button class="search-icon-button">
+          <img class="search-icon" src="./images/icons/search-icon.png" alt="Search icon">
         </button>
       </div>
-
-      <div class="amazon-header-right-section">
-        <a class="orders-link header-link" href="orders.html">
-          <span class="returns-text">Returns</span>
-          <span class="orders-text">& Orders</span>
+      
+      <div class="header-right">
+        <a class="header-returns-orders" href="orders.html">
+          <p class="header-returns">Returns</p>
+          <p class="header-orders">& Orders</p>
         </a>
-
-        <a class="cart-link header-link" href="checkout.html">
-          <img class="cart-icon" src="images/icons/cart-icon.png">
-          <div class="cart-quantity">3</div>
-          <div class="cart-text">Cart</div>
+        <a class="header-cart" href="checkout.html">
+          <div class="cart-icon-container">
+            <p class="cart-quantity">4</p>
+            <img class="cart-icon" src="./images/icons/cart-icon.png" alt="Cart">
+          </div>
+          
+          <p class="header-cart-title">Cart</p>
         </a>
       </div>
-    </div>
+   </header>
 
     <div class="main">
       <div class="order-tracking">
