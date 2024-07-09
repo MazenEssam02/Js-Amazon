@@ -1,12 +1,12 @@
-import { cart,removeFromCart } from "../data/cart.js";
+import { cart,removeFromCart,calculateCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
+updateCart();
 
 
 
 
 
-function generateHtml(){
   let itemsHtml='';
 cart.forEach((cartItem)=>{
   const id=cartItem.productId;
@@ -94,9 +94,8 @@ cart.forEach((cartItem)=>{
     </div>`;
   document.querySelector('.order-summary').innerHTML=itemsHtml;
 });
-return itemsHtml;
-}
-generateHtml();
+
+
 document.querySelectorAll('.js-delete-link')
   .forEach((link)=>{
     link.addEventListener('click',()=>{
@@ -105,6 +104,11 @@ document.querySelectorAll('.js-delete-link')
       removeFromCart(productId);
       const container=document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove();
-      console.log(cart);
+      updateCart();
     });
   });
+function updateCart(){
+
+      document.querySelector('.js-return-home-link')
+      .innerHTML=`${calculateCart()} items`;
+}
