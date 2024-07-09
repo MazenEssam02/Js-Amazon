@@ -19,166 +19,192 @@
     <link rel="stylesheet" href="styles/pages/orders.css">
   </head>
   <body>
-    <div class="amazon-header">
-      <div class="amazon-header-left-section">
-        <a href="amazon.html" class="header-link">
-          <img class="amazon-logo"
-            src="images/amazon-logo-white.png">
-          <img class="amazon-mobile-logo"
-            src="images/amazon-mobile-logo-white.png">
-        </a>
-      </div>
+    <header class="header">
+      <a href="amazon.html" class="header-left">
+        <img src="./images/amazon-logo-white.png" alt="Amazon-logo" class="amazon-logo">
+        <img src="./images/amazon-mobile-logo-white.png" alt="Amazon-logo" class="amazon-mobile-logo">
+      </a>
+     
 
-      <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" placeholder="Search">
-
-        <button class="search-button">
-          <img class="search-icon" src="images/icons/search-icon.png">
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search">
+        <button class="search-icon-button">
+          <img class="search-icon" src="./images/icons/search-icon.png" alt="Search icon">
         </button>
       </div>
-
-      <div class="amazon-header-right-section">
-        <a class="orders-link header-link" href="orders.html">
-          <span class="returns-text">Returns</span>
-          <span class="orders-text">& Orders</span>
+      
+      <div class="header-right">
+        <a class="header-returns-orders" href="orders.html">
+          <p class="header-returns">Returns</p>
+          <p class="header-orders">& Orders</p>
         </a>
-
-        <a class="cart-link header-link" href="checkout.html">
-          <img class="cart-icon" src="images/icons/cart-icon.png">
-          <div class="cart-quantity">3</div>
-          <div class="cart-text">Cart</div>
+        <a class="header-cart" href="checkout.html">
+          <div class="cart-icon-container">
+            <p class="cart-quantity">4</p>
+            <img class="cart-icon" src="./images/icons/cart-icon.png" alt="Cart">
+          </div>
+          
+          <p class="header-cart-title">Cart</p>
         </a>
       </div>
+   </header>
+   <div class="main">
+    <div class="page-title">
+      Your Orders
     </div>
-
-    <div class="main">
-      <div class="page-title">Your Orders</div>
-
-      <div class="orders-grid">
-        <div class="order-container">
-          
-          <div class="order-header">
-            <div class="order-header-left-section">
-              <div class="order-date">
-                <div class="order-header-label">Order Placed:</div>
-                <div>August 12</div>
-              </div>
-              <div class="order-total">
-                <div class="order-header-label">Total:</div>
-                <div>$35.06</div>
-              </div>
+    <div class="items-grid">
+      <div class="order-container">
+        <div class="order-details-container">
+          <div class="order-date-price-container">
+            <div class="order-date-container">
+              <p class="order-placed">Order Placed:</p>
+              <p class="order-date">August 12</p>
             </div>
-
-            <div class="order-header-right-section">
-              <div class="order-header-label">Order ID:</div>
-              <div>27cba69d-4c3d-4098-b42d-ac7fa62b7664</div>
+            <div class="price-container">
+              <div class="total">Total:</div>
+              <div class="price">$41.05</div>
             </div>
           </div>
-
-          <div class="order-details-grid">
-            <div class="product-image-container">
-              <img src="images/products/athletic-cotton-socks-6-pairs.jpg">
+          <div class="order-id-container">
+            <div class="order-id-title">
+              Order ID:
             </div>
-
+            <div class="order-id">
+              27cba69d-4c3d-4098-b42d-ac7fa62b7664
+            </div>
+          </div>
+        </div>
+        <div class="order-items">
+          <div class="order-products-grid">
+            <div class="product-img-container">
+              <img class="product-img" src="./images/products/athletic-cotton-socks-6-pairs.jpg" alt="socks">
+            </div>
             <div class="product-details">
               <div class="product-name">
                 Black and Gray Athletic Cotton Socks - 6 Pairs
               </div>
-              <div class="product-delivery-date">
+              <div class="product-arrival">
                 Arriving on: August 15
               </div>
               <div class="product-quantity">
-                Quantity: 1
+                Quantity:1
               </div>
-              <button class="buy-again-button button-primary">
-                <img class="buy-again-icon" src="images/icons/buy-again.png">
-                <span class="buy-again-message">Buy it again</span>
+              <button class="buy-again-button primary-button">
+                <img class="again-icon" src="./images/icons/buy-again.png" alt="buy again">
+                Buy it again
               </button>
             </div>
-
             <div class="product-actions">
-              <a href="tracking.html">
-                <button class="track-package-button button-secondary">
-                  Track package
+              <a  href="tracking.html">
+                <button class="track-button">
+                  
+                  Track Package
                 </button>
               </a>
             </div>
-
-            <div class="product-image-container">
-              <img src="images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg">
+           
+            <div class="product-img-container">
+              <img class="product-img" src="./images/products/athletic-cotton-socks-6-pairs.jpg" alt="socks">
             </div>
-
             <div class="product-details">
               <div class="product-name">
-                Adults Plain Cotton T-Shirt - 2 Pack
+                Black and Gray Athletic Cotton Socks - 6 Pairs
               </div>
-              <div class="product-delivery-date">
-                Arriving on: August 19
+              <div class="product-arrival">
+                Arriving on: August 15
               </div>
               <div class="product-quantity">
-                Quantity: 2
+                Quantity:1
               </div>
-              <button class="buy-again-button button-primary">
-                <img class="buy-again-icon" src="images/icons/buy-again.png">
-                <span class="buy-again-message">Buy it again</span>
+              <button class="buy-again-button primary-button">
+                <img class="again-icon" src="./images/icons/buy-again.png" alt="buy again">
+                Buy it again
               </button>
             </div>
-
             <div class="product-actions">
-              <a href="tracking.html">
-                <button class="track-package-button button-secondary">
-                  Track package
+              <a  href="tracking.html">
+                <button class="track-button">
+                  
+                  Track Package
                 </button>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="order-container">
-
-          <div class="order-header">
-            <div class="order-header-left-section">
-              <div class="order-date">
-                <div class="order-header-label">Order Placed:</div>
-                <div>June 10</div>
-              </div>
-              <div class="order-total">
-                <div class="order-header-label">Total:</div>
-                <div>$41.90</div>
-              </div>
+      </div>
+      <div class="order-container">
+        <div class="order-details-container">
+          <div class="order-date-price-container">
+            <div class="order-date-container">
+              <p class="order-placed">Order Placed:</p>
+              <p class="order-date">August 12</p>
             </div>
-
-            <div class="order-header-right-section">
-              <div class="order-header-label">Order ID:</div>
-              <div>b6b6c212-d30e-4d4a-805d-90b52ce6b37d</div>
+            <div class="price-container">
+              <div class="total">Total:</div>
+              <div class="price">$41.05</div>
             </div>
           </div>
-
-          <div class="order-details-grid">
-            <div class="product-image-container">
-              <img src="images/products/intermediate-composite-basketball.jpg">
+          <div class="order-id-container">
+            <div class="order-id-title">
+              Order ID:
             </div>
-
+            <div class="order-id">
+              27cba69d-4c3d-4098-b42d-ac7fa62b7664
+            </div>
+          </div>
+        </div>
+        <div class="order-items">
+          <div class="order-products-grid">
+            <div class="product-img-container">
+              <img class="product-img" src="./images/products/athletic-cotton-socks-6-pairs.jpg" alt="socks">
+            </div>
             <div class="product-details">
               <div class="product-name">
-                Intermediate Size Basketball
+                Black and Gray Athletic Cotton Socks - 6 Pairs
               </div>
-              <div class="product-delivery-date">
-                Arriving on: June 17
+              <div class="product-arrival">
+                Arriving on: August 15
               </div>
               <div class="product-quantity">
-                Quantity: 2
+                Quantity:1
               </div>
-              <button class="buy-again-button button-primary">
-                <img class="buy-again-icon" src="images/icons/buy-again.png">
-                <span class="buy-again-message">Buy it again</span>
+              <button class="buy-again-button primary-button">
+                <img class="again-icon" src="./images/icons/buy-again.png" alt="buy again">
+                Buy it again
               </button>
             </div>
-
             <div class="product-actions">
-              <a href="tracking.html">
-                <button class="track-package-button button-secondary">
-                  Track package
+              <a  href="tracking.html">
+                <button class="track-button">
+                  
+                  Track Package
+                </button>
+              </a>
+            </div>
+           
+            <div class="product-img-container">
+              <img class="product-img" src="./images/products/athletic-cotton-socks-6-pairs.jpg" alt="socks">
+            </div>
+            <div class="product-details">
+              <div class="product-name">
+                Black and Gray Athletic Cotton Socks - 6 Pairs
+              </div>
+              <div class="product-arrival">
+                Arriving on: August 15
+              </div>
+              <div class="product-quantity">
+                Quantity:1
+              </div>
+              <button class="buy-again-button primary-button">
+                <img class="again-icon" src="./images/icons/buy-again.png" alt="buy again">
+                Buy it again
+              </button>
+            </div>
+            <div class="product-actions">
+              <a  href="tracking.html">
+                <button class="track-button">
+                  
+                  Track Package
                 </button>
               </a>
             </div>
@@ -186,5 +212,6 @@
         </div>
       </div>
     </div>
+   </div>
   </body>
 </html>
