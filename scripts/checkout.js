@@ -1,6 +1,21 @@
 import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
+document.querySelectorAll('.js-delete-link')
+  .forEach((item)=>{
+    item.addEventListener('click',()=>{
+      const productId=item.dataset.productId;
+      cart.forEach((cartItem)=>{
+        if(cartItem.productId===productId){
+          cart.pop[cartItem];
+        }
+      });
+    });
+  });
+
+
+
+
 let itemsHtml='';
 cart.forEach((cartItem)=>{
   const id=cartItem.productId;
@@ -9,7 +24,7 @@ cart.forEach((cartItem)=>{
     if(product.id===id){
       matchingProduct=product;
     }
-  })
+  });
   itemsHtml+=` 
     <div class="cart-item-container">
       <div class="delivery-date">
@@ -34,7 +49,7 @@ cart.forEach((cartItem)=>{
             <span class="update-quantity-link link-primary">
               Update
             </span>
-            <span class="delete-quantity-link link-primary">
+            <span class="delete-quantity-link link-primary js-delete-link" data-product-id=${matchingProduct.id}>
               Delete
             </span>
           </div>
