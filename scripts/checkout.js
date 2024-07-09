@@ -1,22 +1,13 @@
-import { cart } from "../data/cart.js";
+import { cart,removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
-document.querySelectorAll('.js-delete-link')
-  .forEach((item)=>{
-    item.addEventListener('click',()=>{
-      const productId=item.dataset.productId;
-      cart.forEach((cartItem)=>{
-        if(cartItem.productId===productId){
-          cart.pop[cartItem];
-        }
-      });
-    });
-  });
 
 
 
 
-let itemsHtml='';
+
+function generateHtml(){
+  let itemsHtml='';
 cart.forEach((cartItem)=>{
   const id=cartItem.productId;
   let matchingProduct;
@@ -26,7 +17,7 @@ cart.forEach((cartItem)=>{
     }
   });
   itemsHtml+=` 
-    <div class="cart-item-container">
+    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
       <div class="delivery-date">
         Delivery date: Tuesday, June 21
       </div>
@@ -37,7 +28,7 @@ cart.forEach((cartItem)=>{
 
         <div class="cart-item-details">
           <div class="product-name">
-            ${matchingProduct.price}
+            ${matchingProduct.name}
           </div>
           <div class="product-price">
             $${(matchingProduct.priceCents/100).toFixed(2)}
@@ -103,3 +94,17 @@ cart.forEach((cartItem)=>{
     </div>`;
   document.querySelector('.order-summary').innerHTML=itemsHtml;
 });
+return itemsHtml;
+}
+generateHtml();
+document.querySelectorAll('.js-delete-link')
+  .forEach((link)=>{
+    link.addEventListener('click',()=>{
+      
+      const productId=link.dataset.productId;
+      removeFromCart(productId);
+      const container=document.querySelector(`.js-cart-item-container-${productId}`);
+      container.remove();
+      console.log(cart);
+    });
+  });
