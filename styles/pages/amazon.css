@@ -74,6 +74,9 @@
     font-size: 1em;
     opacity: 0;
   }
+  .check-container-visible{
+    opacity: 1;
+  }
   .check-image{
     width: 25px;
     margin-right: 5px;
