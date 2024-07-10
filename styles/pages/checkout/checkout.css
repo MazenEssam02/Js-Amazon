@@ -150,6 +150,9 @@
   margin-left: 0px;
   cursor: pointer;
 }
+.delivery-option-input:focus{
+  outline: 0px solid;
+}
 
 .delivery-option-date {
   color: rgb(0, 118, 0);
