@@ -58,10 +58,10 @@ cart.forEach((cartItem)=>{
 });
 
 
-function getDay(id){
+function getDay(deliveryOptionId){
   let days;
  deliveryOptions.forEach((Option)=>{
-  if(Option.id===id){
+  if(Option.id===deliveryOptionId){
     days=Option.deliveryDays;
   }
  });
@@ -104,6 +104,8 @@ document.querySelectorAll('.js-delivery-option')
       const deliveryOptionId=option.dataset.deliveryOptionId;
       const productId=option.dataset.itemDeliveryOption;
       updateDeliveryOption(productId,deliveryOptionId);
+      const container=document.querySelector(`.js-cart-item-container-${productId}`);
+      container.querySelector('.delivery-date').innerHTML=`Delivery date: ${getDay(deliveryOptionId)}`;
     });
   });
 
