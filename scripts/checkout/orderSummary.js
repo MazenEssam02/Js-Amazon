@@ -1,7 +1,7 @@
-import { cart,removeFromCart,calculateCart,updateCartItemQuantity,updateDeliveryOption } from "../data/cart.js";
-import { products } from "../data/products.js";
+import { cart,removeFromCart,calculateCart,updateCartItemQuantity,updateDeliveryOption } from "../../data/cart.js";
+import { products } from "../../data/products.js";
 import dayjs from"https://unpkg.com/dayjs@1.11.10/esm/index.js"
-import { deliveryOptions } from "../data/deliveryOptions.js";
+import { deliveryOptions } from "../../data/deliveryOptions.js";
 updateCart();
 
 
