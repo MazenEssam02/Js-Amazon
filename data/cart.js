@@ -1,4 +1,6 @@
 
+import { products } from "./products.js";
+import { deliveryOptions } from "./deliveryOptions.js";
 
 export const cart=JSON.parse(localStorage.getItem('cart'))||[{
   productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
@@ -71,4 +73,30 @@ export function calculateCart(){
     });
     item.deliveryOption=deliveryOptionId;
     saveToStorage();
+  }
+  export function calculatePrice(){
+    let totalPrice=0;
+    cart.forEach((cartItem)=>{
+      let matchingProduct;
+      products.forEach((product)=>{
+        if(product.id===cartItem.productId){
+          matchingProduct=product;
+        }
+      });
+      totalPrice+=cartItem.quantity*matchingProduct.priceCents;
+    });
+    return totalPrice;
+  }
+  export function calculateShipping(){
+    let totalShipping=0;
+    cart.forEach((cartItem)=>{
+      let matchingOption;
+      deliveryOptions.forEach((option)=>{
+        if(option.id===cartItem.deliveryOption){
+          matchingOption=option;
+        }
+      });
+      totalShipping+=matchingOption.priceCents;
+    });
+    return totalShipping;
   }
