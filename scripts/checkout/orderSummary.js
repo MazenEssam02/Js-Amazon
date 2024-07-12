@@ -1,9 +1,11 @@
-import { cart,removeFromCart,calculateCart,updateCartItemQuantity,updateDeliveryOption } from "../../data/cart.js";
+import { cart,removeFromCart,updateCartItemQuantity,updateDeliveryOption } from "../../data/cart.js";
 import { products } from "../../data/products.js";
 import dayjs from"https://unpkg.com/dayjs@1.11.10/esm/index.js"
 import { deliveryOptions } from "../../data/deliveryOptions.js";
 import {renderPayment} from"./paymentSummary.js"
-updateCart();
+import{renderCheckoutHeader} from "./chechout-header.js"
+renderCheckoutHeader();
+
 renderPayment();
 
   let itemsHtml='';
@@ -66,16 +68,27 @@ function getDay(deliveryOptionId){
     days=Option.deliveryDays;
   }
  });
-  const today=dayjs();
-  const date=today.add(days,'days');
-  return date.format("dddd, MMMM D");
+  let today=dayjs();
+  
+  for (let index = 0; index < days; index++) {
+    // console.log();
+    today=today.add(1,'days');
+    if(today.format("dddd")==='Saturday'){
+     
+      today=today.add(2,'days');
+    }
+    else if(today.format("dddd")==='Sunday'){
+      today=today.add(1,'days');
+    }
+     
+  }
+  // const date=today;
+  return today.format("dddd, MMMM D");
 }
 function deliveryOptionInHtml(matchingProduct,cartItem) {
   let priceHtml='';
   deliveryOptions.forEach((deliveryOption)=>{
-    const today=dayjs();
-    const date=today.add(deliveryOption.deliveryDays,'days');
-    const dateString=date.format("dddd, MMMM D");
+    const dateString=getDay(deliveryOption.id);
     let price=!deliveryOption.priceCents?'FREE':`$${(deliveryOption.priceCents/100).toFixed(2)} -`;
    const isChecked=deliveryOption.id===cartItem.deliveryOption;
     
@@ -119,7 +132,7 @@ document.querySelectorAll('.js-delete-link')
       removeFromCart(productId);
       const container=document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove();
-      updateCart();
+      renderCheckoutHeader();
       renderPayment();
     });
   });
@@ -150,11 +163,7 @@ document.querySelectorAll('.js-delete-link')
     });
   });
 
-function updateCart(){
 
-      document.querySelector('.js-return-home-link')
-      .innerHTML=`${calculateCart()} items`;
-}
 function updateQuantity(link){
   const productId=link.dataset.productId;
       const container=document.querySelector(`.js-cart-item-container-${productId}`);
@@ -167,7 +176,7 @@ function updateQuantity(link){
         container.querySelector('.js-quantity-label').innerHTML=inputValue;
         
         updateCartItemQuantity(productId,inputValue);
-        updateCart();
+        renderCheckoutHeader();
         container.classList.remove('is-editing-quantity');
       
 }
