@@ -1,4 +1,4 @@
-import{ca}
+import { calculateCart } from "../../data/cart.js";
 export function renderCheckoutHeader(){
 
   const html=`
