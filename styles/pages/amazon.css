@@ -66,8 +66,13 @@
   .dropdown-container{
     margin-bottom: 12px;
   }
+  .size-chart-link{
+    text-decoration: underline;
+ 
+
+  }
   .check-container{
-    
+    margin-top: 7px;
     margin-bottom: 7px;
     display: flex;
     align-items: center;
@@ -86,7 +91,7 @@
   }
   .add-to-cart-button{
     padding: 8px ;
-    
+    margin-top: auto;
     border-radius: 50px;
     
   }

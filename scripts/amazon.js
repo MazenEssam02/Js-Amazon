@@ -36,6 +36,7 @@ products.forEach((product)=>{
             <option value="10">10</option>
         </select>
         </div>
+        ${product.extraInfoHTML()}
         <div class="check-container js-check-container-${product.id}">
           <img class="check-image" src="./images/icons/checkmark.png" alt="check">
           <span class="added-check">Added</span>
