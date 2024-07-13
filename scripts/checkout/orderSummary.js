@@ -4,6 +4,7 @@ import dayjs from"https://unpkg.com/dayjs@1.11.10/esm/index.js"
 import { deliveryOptions } from "../../data/deliveryOptions.js";
 import {renderPayment} from"./paymentSummary.js"
 import{renderCheckoutHeader} from "./chechout-header.js"
+import { formatCurrency } from "../../utils/currency.js";
 renderCheckoutHeader();
 
 renderPayment();
@@ -32,7 +33,7 @@ cart.forEach((cartItem)=>{
             ${matchingProduct.name}
           </div>
           <div class="product-price">
-            $${(matchingProduct.priceCents/100).toFixed(2)}
+            ${matchingProduct.getPrice()}
           </div>
           <div class="product-quantity">
             <span>
@@ -89,7 +90,7 @@ function deliveryOptionInHtml(matchingProduct,cartItem) {
   let priceHtml='';
   deliveryOptions.forEach((deliveryOption)=>{
     const dateString=getDay(deliveryOption.id);
-    let price=!deliveryOption.priceCents?'FREE':`$${(deliveryOption.priceCents/100).toFixed(2)} -`;
+    let price=!deliveryOption.priceCents?'FREE':`$${formatCurrency(deliveryOption.priceCents)} -`;
    const isChecked=deliveryOption.id===cartItem.deliveryOption;
     
     priceHtml+=

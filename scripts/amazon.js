@@ -1,5 +1,6 @@
 import{cart,addToCart,calculateCart} from '../data/cart.js';
 import{products} from '../data/products.js';
+
 updateCart();
 let productsHtml='';
 
@@ -13,12 +14,12 @@ products.forEach((product)=>{
           <p class="product-main-desc">${product.name}</p>
         </div>
         <div class="rating-container">
-          <img class="rating-img" src="./images/ratings/rating-${product.rating.stars*10}.png" alt="">
+          <img class="rating-img" src="${product.getStarsUrl()}" alt="">
           <span class="rating-quantity">${product.rating.count}</span>
         </div>
         
         <div class="product-price">
-          $${(product.priceCents/100).toFixed(2)}
+          ${product.getPrice()}
         </div>
 
         <div class="dropdown-container">
