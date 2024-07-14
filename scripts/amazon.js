@@ -23,7 +23,7 @@ products.forEach((product)=>{
         </div>
 
         <div class="dropdown-container">
-          <select class="js-product-quantity-${product.id}">
+          <select class="product-quantity js-product-quantity-${product.id}">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -35,8 +35,11 @@ products.forEach((product)=>{
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
+        ${product.sizeSelectHtml()}
         </div>
-        ${product.extraInfoHTML()}
+        <div class="spacer">
+        ${product.sizeChartHtml()}
+        </div>
         <div class="check-container js-check-container-${product.id}">
           <img class="check-image" src="./images/icons/checkmark.png" alt="check">
           <span class="added-check">Added</span>

@@ -65,13 +65,22 @@
   }
   .dropdown-container{
     margin-bottom: 12px;
+    
+    display: flex;
+  }
+  .product-quantity{
+    margin-right: 15px;
   }
   .size-chart-link{
     text-decoration: underline;
- 
+    color:rgb(1, 82, 197);
 
   }
+  .spacer{
+    flex: 1;
+  }
   .check-container{
+    transition:200ms;
     margin-top: 7px;
     margin-bottom: 7px;
     display: flex;
@@ -80,6 +89,7 @@
     opacity: 0;
   }
   .check-container-visible{
+    transition:200ms;
     opacity: 1;
   }
   .check-image{

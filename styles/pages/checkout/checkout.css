@@ -225,3 +225,7 @@
   display: initial;
   }
 }
+.size{
+  text-transform: uppercase;
+  font-weight: 500;
+}

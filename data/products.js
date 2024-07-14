@@ -22,7 +22,10 @@ class Product {
     return `$${formatCurrency(this.priceCents)}`;
   }
 
-  extraInfoHTML() {
+  sizeChartHtml() {
+    return '';
+  }
+  sizeSelectHtml() {
     return '';
   }
 
@@ -35,12 +38,27 @@ class Clothing extends Product{
     super(productDetails);
     this.clothingSize=productDetails.sizeChartLink;
   }
-  extraInfoHTML() {
+  sizeChartHtml() {
     
     return `
     <a href="../images/clothing-size-chart.png" target="_blank" class="size-chart-link">
     Show Size Chart
     </a>
+    `;
+  }
+  sizeSelectHtml() {
+    return `
+    <select class="product-size js-product-size-${this.id}">
+            
+            <option selected value="xxs">XXS</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+            
+        </select>
     `;
   }
 }
