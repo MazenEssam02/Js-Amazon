@@ -1,4 +1,4 @@
-import{cart,addToCart,calculateCart} from '../data/cart.js';
+import{addToCart,updateCart} from '../data/cart.js';
 import{products} from '../data/products.js';
 
 updateCart();
@@ -54,11 +54,7 @@ products.forEach((product)=>{
 });
 document.querySelector('.products-grid').innerHTML=productsHtml;
 
-function updateCart(){
-  const cartQuantity=calculateCart()
-    document.querySelector('.js-cart-quantity')
-    .innerHTML=cartQuantity;
-}
+
 function addedToCartIcon(productId){
   const addedMessage=document.querySelector(`.js-check-container-${productId}`);
         //show added icon
