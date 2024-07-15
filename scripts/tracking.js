@@ -3,6 +3,8 @@ import {orders} from "../data/order.js"
 import { getDay } from "./checkout/orderSummary.js";
 import { products } from "../data/products.js";
 import dayjs from"https://unpkg.com/dayjs@1.11.10/esm/index.js"
+import { generateHeaderHtml } from './header.js';
+generateHeaderHtml();
 updateCart();
 
 

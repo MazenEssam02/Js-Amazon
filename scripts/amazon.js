@@ -1,10 +1,26 @@
 import{addToCart,updateCart} from '../data/cart.js';
 import{products} from '../data/products.js';
-
+import { generateHeaderHtml } from './header.js';
+generateHeaderHtml();
 updateCart();
 let productsHtml='';
-
+const url=new URL(window.location.href);
+const params = new URLSearchParams(url.search);
 products.forEach((product)=>{
+  
+  if(params.has('search')){
+    const name=url.searchParams.get('search')
+  
+    let flag=false;
+    product.keywords.forEach((keyword)=>{
+      if(keyword.toLowerCase().includes(name.toLowerCase())){
+        flag=true;
+      }
+    });
+    if(!(product.name.toLowerCase().includes(name.toLowerCase()))&&!flag){
+      return;
+    }
+  }
   productsHtml+=`<div class="product-container">
         <div class="product-image-container">
           <img class="product-image" src=${product.image} alt="socks">
@@ -51,6 +67,7 @@ products.forEach((product)=>{
         
       </div>
   `;
+  
 });
 document.querySelector('.products-grid').innerHTML=productsHtml;
 
@@ -87,13 +104,4 @@ document.querySelectorAll('.js-add-to-cart')
     });
   });
 
-  let baseUrl = 'amazon.html';
-  let params = new URLSearchParams();
-
-  // Add parameters
-  params.append('orderId', orderId);
-  params.append('productId', productId);
-
-  // Construct the final URL
-  let finalUrl = `${baseUrl}?${params.toString()}`;
-  window.location.href = finalUrl;
+  
