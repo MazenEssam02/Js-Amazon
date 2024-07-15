@@ -109,7 +109,7 @@ export const products = [
       "mens"
     ],
     type: "clothing",
-    sizeChartLink: "images/clothing-size-chart.png"
+    sizeChartLink: "./images/clothing-size-chart.png"
   },
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
@@ -233,7 +233,7 @@ export const products = [
       "apparel"
     ],
     type: "clothing",
-    sizeChartLink: "images/clothing-size-chart.png"
+    sizeChartLink: "./images/clothing-size-chart.png"
   },
   {
     id: "aad29d11-ea98-41ee-9285-b916638cac4a",
