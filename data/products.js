@@ -1,5 +1,5 @@
 import {formatCurrency} from '../utils/currency.js'
-const sizeChart= "images/clothing-size-chart.png";
+const sizeChart= "Js-Amazon/images/clothing-size-chart.png";
 class Product {
   id;
   image;
