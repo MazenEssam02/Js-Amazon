@@ -11,17 +11,18 @@ function saveToStorage(){
   localStorage.setItem('cart',JSON.stringify(cart))
 }
 
-export function addToCart(productId){
+export function addToCart(productId,size=undefined){
   let selectedItem;
+  const input=document.querySelector(`.js-product-size-${productId}`);
+   size= size?size: input?input.value:undefined;
   cart.forEach((item)=>{
-    if(item.productId===productId){
+    if(item.productSizeId===productId+size){
       selectedItem=item;
     }
   });
   const quantityInput=document.querySelector(`.js-product-quantity-${productId}`);
   const quantity=quantityInput?Number(quantityInput.value):1;
-  const input=document.querySelector(`.js-product-size-${productId}`);
-  const size= input?input.value:undefined;
+  
   if(selectedItem && size===selectedItem.size){
     selectedItem.quantity+=quantity;
   }
@@ -103,11 +104,7 @@ export function calculateCart(){
     return totalShipping;
   }
   export function emptyCart(){
-    cart.forEach((cartItem)=>{
-      
-      const index=cart.indexOf(cartItem);
-        cart.splice(index,1);
-    });
+    cart.splice(0,cart.length);
     saveToStorage();
   }
   export function updateCart(){

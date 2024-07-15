@@ -119,6 +119,13 @@
   .track-button:hover{
     background-color:rgb(249, 249, 249) ;
   }
+  .size{
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .size-container{
+    margin-bottom:10px ;
+  }
   @media(max-width:800px){
     .order-products-grid{
       
