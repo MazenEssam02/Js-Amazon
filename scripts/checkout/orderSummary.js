@@ -28,7 +28,7 @@ deliveryOptions.forEach((Option)=>{
     
   }
   // const date=today;
-  return today.format("dddd, MMMM D");
+  return today;
 }
 export function renderOrder(){
   let itemsHtml='';
@@ -43,7 +43,7 @@ export function renderOrder(){
     itemsHtml+=` 
       <div class="cart-item-container js-cart-item-container-${matchingProduct.id+cartItem.size}">
         <div class="delivery-date">
-          Delivery date: ${getDay(cartItem.deliveryOption)}
+          Delivery date: ${getDay(cartItem.deliveryOption).format("dddd, MMMM D")}
         </div>
 
         <div class="cart-item-details-grid">
@@ -90,7 +90,7 @@ export function renderOrder(){
   function deliveryOptionInHtml(matchingProduct,cartItem) {
     let priceHtml='';
     deliveryOptions.forEach((deliveryOption)=>{
-      const dateString=getDay(deliveryOption.id);
+      const dateString=getDay(deliveryOption.id).format("dddd, MMMM D");
       let price=!deliveryOption.priceCents?'FREE':`$${formatCurrency(deliveryOption.priceCents)} -`;
     const isChecked=deliveryOption.id===cartItem.deliveryOption;
       // console.log(matchingProduct.id+matchingProduct.size);
@@ -121,7 +121,7 @@ export function renderOrder(){
         const productId=option.dataset.itemDeliveryOption;
         updateDeliveryOption(productId,deliveryOptionId);
         const container=document.querySelector(`.js-cart-item-container-${productId}`);
-        container.querySelector('.delivery-date').innerHTML=`Delivery date: ${getDay(deliveryOptionId)}`;
+        container.querySelector('.delivery-date').innerHTML=`Delivery date: ${getDay(deliveryOptionId).format("dddd, MMMM D")}`;
         renderPayment();
       });
     });

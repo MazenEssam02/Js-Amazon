@@ -1,9 +1,9 @@
 import { products } from "../data/products.js";
-import { formatCurrency } from "../utils/currency.js";
 import {orders} from "../data/order.js"
 import{addToCart, updateCart} from '../data/cart.js';
 import { getDay } from "./checkout/orderSummary.js";
 import dayjs from"https://unpkg.com/dayjs@1.11.10/esm/index.js"
+
 
 updateCart();
 generateHtml();
@@ -11,15 +11,15 @@ function generateHtml(){
 
 let orderhtml='';
 orders.forEach((order)=>{
-const today=dayjs();
 
+console.log(order.orderTime);
 orderhtml+=`
 <div class="order-container">
         <div class="order-details-container">
           <div class="order-date-price-container">
             <div class="order-date-container">
               <p class="order-placed">Order Placed:</p>
-              <p class="order-date">${today.format('MMMM D')}</p>
+              <p class="order-date">${dayjs(order.orderTime).format('MMMM D')}</p>
             </div>
             <div class="price-container">
               <div class="total">Total:</div>
@@ -55,7 +55,7 @@ order.cart.forEach((cartItem)=>{
                   ${selectedItem.name}
                 </div>
                 <div class="product-arrival">
-                  Arriving on: ${getDay(cartItem.deliveryOption)}
+                  Arriving on: ${getDay(cartItem.deliveryOption).format("dddd, MMMM D")}
                 </div>
                 <div class="product-quantity">
                   Quantity:${cartItem.quantity}

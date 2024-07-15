@@ -87,4 +87,13 @@ document.querySelectorAll('.js-add-to-cart')
     });
   });
 
+  let baseUrl = 'amazon.html';
+  let params = new URLSearchParams();
 
+  // Add parameters
+  params.append('orderId', orderId);
+  params.append('productId', productId);
+
+  // Construct the final URL
+  let finalUrl = `${baseUrl}?${params.toString()}`;
+  window.location.href = finalUrl;
