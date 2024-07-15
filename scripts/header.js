@@ -4,8 +4,8 @@ generateHeaderHtml();
 export function generateHeaderHtml(){
   let headerHtml=`
   <a href="amazon.html" class="header-left">
-        <img src="./images/amazon-logo-white.png" alt="Amazon-logo" class="amazon-logo">
-        <img src="./images/amazon-mobile-logo-white.png" alt="Amazon-logo" class="amazon-mobile-logo">
+        <img src="./images/mazon-logo-white.png" alt="Amazon-logo" class="amazon-logo">
+        <img src="./images/mazon-mobile-logo-white.png" alt="Amazon-logo" class="amazon-mobile-logo">
       </a>
      
 
