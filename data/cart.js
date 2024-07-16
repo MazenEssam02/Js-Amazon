@@ -11,10 +11,12 @@ function saveToStorage(){
   localStorage.setItem('cart',JSON.stringify(cart))
 }
 
-export function addToCart(productId,size=undefined){
+export function addToCart(productId,size=false){
   let selectedItem;
   const input=document.querySelector(`.js-product-size-${productId}`);
-   size= size?size: input?input.value:undefined;
+
+   size= (size?size: (input?input.value:false));
+  
   cart.forEach((item)=>{
     if(item.productSizeId===productId+size){
       selectedItem=item;

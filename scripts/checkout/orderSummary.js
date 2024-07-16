@@ -71,7 +71,8 @@ export function renderOrder(){
               </span>
             </div>
             <div class="size-container">
-            ${cartItem.size?`Size: <span class="size">${cartItem.size}</span>`:''}
+            
+              ${cartItem.size==='false'?'':`Size: <span class="size">${cartItem.size}</span>`}
             </div>
           </div>
 
