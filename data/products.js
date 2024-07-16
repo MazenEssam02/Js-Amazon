@@ -43,7 +43,7 @@ class Clothing extends Product{
   sizeChartHtml() {
     
     return `
-    <a href="../images/clothing-size-chart.png" target="_blank" class="size-chart-link">
+    <a href="./images/clothing-size-chart.png" target="_blank" class="size-chart-link">
     Show Size Chart
     </a>
     `;
