@@ -64,7 +64,7 @@ order.cart.forEach((cartItem)=>{
                 <div class="size-container">
                   ${cartItem.size?`Size: <span class="size">${cartItem.size}</span>`:''}
                 </div>
-                <button class="buy-again-button primary-button js-buy-again-button js-button-id-${cartItem.productId+order.id}" data-product-id=${cartItem.productId} data-size=${cartItem.size} data-order-id=${order.id}>
+                <button class="buy-again-button primary-button js-buy-again-button js-button-id-${cartItem.productSizeId+order.id}" data-product-id=${cartItem.productId} data-size=${cartItem.size} data-order-id=${order.id}>
                   <img class="again-icon" src="./images/icons/buy-again.png" alt="buy again">
                   Buy it again
                 </button>
@@ -93,7 +93,7 @@ orderhtml+='</div>';
       const size=button.dataset.size;
       const orderId=button.dataset.orderId;
       addToCart(productId,size);
-      addedToCartButton(productId+orderId)
+      addedToCartButton(productId+size+orderId)
       updateCart();
     });
   });
