@@ -24,11 +24,17 @@ This project is a simplified version of the Amazon website, an e-commerce websit
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-   `git clone [repository URL]`
-2. Install dependencies:
-  `cd Js-Amazon`
-3. `Open amazon.html`
-
+   ```bash
+   git clone [https://github.com/MazenEssam02/Js-Amazon.git]
+   ```
+2. Navigate to the project:
+   ```bash
+   cd Js-Amazon
+   ```
+3. Open amazon.html:
+    ```bash
+   Open amazon.html
+   ```
 
 ## Contribution
 
