@@ -16,7 +16,7 @@ deliveryOptions.forEach((Option)=>{
   let today=dayjs();
   
   for (let index = 0; index < days; index++) {
-    // console.log();
+    
     today=today.add(1,'days');
     if(today.format("dddd")==='Saturday'){
     
@@ -72,7 +72,7 @@ export function renderOrder(){
             </div>
             <div class="size-container">
             
-              ${cartItem.size==='false'?'':`Size: <span class="size">${cartItem.size}</span>`}
+              ${cartItem.size?`Size: <span class="size">${cartItem.size}</span>`:''}
             </div>
           </div>
 

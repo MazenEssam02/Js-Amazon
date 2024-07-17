@@ -14,8 +14,8 @@ function saveToStorage(){
 export function addToCart(productId,size=false){
   let selectedItem;
   const input=document.querySelector(`.js-product-size-${productId}`);
-
-   size= (size?size: (input?input.value:false));
+  size=size==='false'?false:size;
+  size= (size?size: (input?input.value:false));
   
   cart.forEach((item)=>{
     if(item.productSizeId===productId+size){
