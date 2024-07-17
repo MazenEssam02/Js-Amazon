@@ -25,7 +25,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/MazenEssam02/Js-Amazon.git]
+   git clone [repository URL]
    ```
 2. Navigate to the project:
    ```bash
