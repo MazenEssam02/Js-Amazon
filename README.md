@@ -35,7 +35,12 @@ To run this project locally, follow these steps:
     ```bash
    Open amazon.html
    ```
+Or
 
+Try it using:
+  
+    https://mazenessam02.github.io/Js-Amazon/amazon.html
+   
 ## Contribution
 
 Contributions to Amazon Project are welcome! If you find any bugs, have feature requests, or want to contribute to the project, feel free to open an issue or submit a pull request.
